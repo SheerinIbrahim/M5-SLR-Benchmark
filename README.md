@@ -21,12 +21,6 @@ Seamless human-computer interaction for sign language recognition (SLR) demands 
 
 *Key Finding: The Apple M5 architecture is 132% more temporally stable than the Colab T4 GPU, effectively eliminating "tail latency" spikes commonly found in cloud-based inference.*
 
-## Repository Structure
-* `/scripts`: Contains `benchmark.py` (The headless benchmarking protocol).
-* `/results`: High-resolution plots of Latency Distribution (Figure 1) and Throughput (Figure 2).
-* `requirements.txt`: Python environment configuration.
-* `CITATION.cff`: Metadata for academic citation.
-
 ## Usage
 1. **Install dependencies:** ```bash
    pip install -r requirements.txt
