@@ -1,5 +1,3 @@
-# M5-SLR-Benchmark
-
 # Benchmarking Apple M5 Unified Memory for Real-Time Sign Language Recognition
 
 ## Overview
@@ -7,22 +5,26 @@ This repository contains the benchmarking suite and experimental data for the st
 **"On-Device vs. Cloud-Based Inference: Benchmarking Apple M5 Unified Memory Architecture against Virtualized Tensor Core Accelerators for Sign Language Recognition."**
 
 ## Abstract
-[cite_start]Seamless human-computer interaction for sign language recognition (SLR) demands deterministic, low-latency inference[cite: 6]. [cite_start]This study benchmarks a MediaPipe-based system across local Apple M5 silicon, Google Colab CPU (Intel Xeon), and T4 GPU instances[cite: 8]. [cite_start]Experimental results using a 1,705-frame workload demonstrate that the Apple M5 achieves a mean latency of 17.02 ms and a throughput of 58.75 FPS[cite: 9].
+Seamless human-computer interaction for sign language recognition (SLR) demands deterministic, low-latency inference. This study benchmarks a MediaPipe-based system across local Apple M5 silicon (16GB Unified Memory), Colab CPU (Intel Xeon), and Colab T4 GPU instances. Experimental results using a 1,705-frame workload demonstrate that the Apple M5 achieves a mean latency of 17.02 ms and a throughput of 58.75 FPS.
 
-## Key Features
-* [cite_start]**Headless Benchmarking:** Isolates core hardware performance by bypassing GUI rendering overhead[cite: 73, 76].
-* [cite_start]**Feature Extraction:** Implements a 21-point hand landmark model (63-value feature vector)[cite: 58].
-* [cite_start]**Architectural Analysis:** Compares the 2nm Apple M5 Unified Memory Architecture (UMA) against 12nm discrete cloud GPUs[cite: 69, 70].
+## Hardware Environments
+* **Edge-Native:** Apple M5 SoC (2nm Architecture, Unified Memory)
+* **Cloud GPU:** Colab T4 GPU (Virtualized Tensor Core Accelerator)
+* **Cloud CPU:** Intel Xeon (Virtualized Instance)
 
 ## Results
-| Platform | Mean Latency (ms) | Std Dev (ms) | Throughput (FPS) |
+| Performance Metric | Apple M5 (Edge) | Colab T4 GPU | Colab CPU |
 | :--- | :--- | :--- | :--- |
-| **Apple M5 (Edge)** | **17.02** | **1.98** | **58.75** |
-| Nvidia T4 (Cloud) | 18.09 | 4.60 | 55.27 |
-| Intel Xeon (CPU) | 29.27 | 5.18 | 34.17 |
+| **Mean Latency (ms)** | **17.02** | 18.09 | 29.27 |
+| **Std. Deviation (ms)** | **1.98** | 4.60 | 5.18 |
+| **Throughput (FPS)** | **58.75** | 55.27 | 34.17 |
 
-[cite_start]*The Apple M5 demonstrated superior temporal stability, being 132% more stable than the cloud-based T4 GPU[cite: 11].*
+*Findings show the Apple M5 is 132% more temporally stable than the Colab T4 GPU, effectively eliminating the "tail latency" spikes observed in cloud environments.*
 
 ## Usage
 1. Install dependencies: `pip install -r requirements.txt`
-2. Run benchmark: `python scripts/benchmark.py --headless`
+2. Execute benchmark: `python scripts/benchmark.py --headless`
+
+## Citation
+Please cite this work if used in your research:
+> Ibrahim, S. S. (2026). On-Device vs. Cloud-Based Inference: Benchmarking Apple M5 Unified Memory Architecture for Sign Language Recognition. RMIT University.
