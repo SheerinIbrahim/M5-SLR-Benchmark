@@ -23,10 +23,12 @@ Seamless human-computer interaction for sign language recognition (SLR) demands 
 
 ## Usage
 1. **Install dependencies:**
-   ```bash pip install -r requirements.txt
+   ```bash
+   pip install -r requirements.txt
 
 3. **Run the benchmarking script:**
-   ```bash python scripts/benchmark.py --headless
+   ```bash
+   python scripts/benchmark.py --headless
 
 ## Citation
 If you find this research or the benchmarking suite helpful, please cite this work as an unpublished manuscript:
